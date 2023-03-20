@@ -1,5 +1,11 @@
 def encrypt(text, key):
-  return text
+  offset = sum([ord(c) for c in key]) % 128
+  
+  encrypted_text = ""
+  for c in text:
+    encrypted_text += chr(ord(c) + offset)
+
+  return encrypted_text
 
 def decrypt(text, key):
   return text
