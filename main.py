@@ -8,7 +8,13 @@ def encrypt(text, key):
   return encrypted_text
 
 def decrypt(text, key):
-  return text
+  offset = sum([ord(c) for c in key]) % 128
+  
+  decrypted_text = ""
+  for c in text:
+    decrypted_text += chr(ord(c) - offset)
+
+  return decrypted_text
 
 def main():
   selection = input("Выберите операцию: 1 - Зашифровать, 2 - Расшифровать ")
