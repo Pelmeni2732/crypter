@@ -27,7 +27,7 @@ def main():
     
     stride = 1
     if encryption_type == "2":
-      stride = input("Введите количество символов в группе: ")
+      stride = int(input("Введите количество символов в группе: "))
     elif encryption_type == "3":
       stride = " "
     
@@ -45,6 +45,10 @@ def main():
     for chunk in chunks:
       encrypted_msg += encrypt(chunk, key)
 
+    print()
+    print()
+
+    print("Зашифрованное сообщение:")
     print(encrypted_msg)
   elif selection == "2":
     encryption_type = input("Выберите тип шифрования: 1 - Символ, 2 - Группа, 3 - Слово ")
@@ -55,7 +59,7 @@ def main():
     
     stride = 1
     if encryption_type == "2":
-      stride = input("Введите количество символов в группе: ")
+      stride = int(input("Введите количество символов в группе: "))
     elif encryption_type == "3":
       stride = " "
 
@@ -73,6 +77,10 @@ def main():
     for chunk in chunks:
       decrypted_msg += decrypt(chunk, key)
 
+    print()
+    print()
+
+    print("Расшифрованное сообщение:")
     print(decrypted_msg)
   else:
     print("Неизвестная команда")
